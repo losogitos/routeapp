@@ -1,6 +1,6 @@
 package com.ciupa.routeapp.model
 
-enum class Destiny (name: String) {
+enum class Destiny (val destinyName: String) {
     MADRIT("Madrit"),
     BARCELONA("Barcelona"),
     GIRONA("Girona Airport"),

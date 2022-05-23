@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ciupa.routeapp.databinding.TextRowItemBinding
+import com.ciupa.routeapp.extension.setRouteText
 import com.ciupa.routeapp.model.TransportCard
 
 class RouteAdapter :
@@ -13,7 +14,7 @@ class RouteAdapter :
 
     class ViewHolder(val binding: TextRowItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(entry: TransportCard) {
-            binding.routeDescription.text = entry.toString()
+            binding.routeDescription.setRouteText(entry)
             binding.executePendingBindings()
         }
     }

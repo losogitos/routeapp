@@ -1,4 +1,8 @@
 <resources>
 	<string name="app_name">Route App</string>
 	<string name="sort_trip">Sort trip</string>
+	<string name="take_trip">Take %s %s from %s to %s.</string>
+	<string name="sit_in">Sit in seat %s.</string>
+	<string name="no_seat">No seat assignment.</string>
+	<string name="gate_seat">Gate %s, seat %s.</string>
 </resources>

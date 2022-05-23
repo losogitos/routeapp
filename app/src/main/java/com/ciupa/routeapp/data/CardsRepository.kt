@@ -13,8 +13,8 @@ class CardsRepository {
             Destiny.BARCELONA,
             Transport(
                 TransportType.TRAIN,
-                "78A",
-                "45B"
+                number = "78A",
+                seat = "45B"
             )
         )
         val card2 = TransportCard(

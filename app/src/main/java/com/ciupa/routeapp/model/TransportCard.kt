@@ -7,7 +7,7 @@ data class TransportCard (
     val transport: Transport)
 
 data class Transport (
-    val transport: TransportType,
+    val transportType: TransportType,
     val number: String? = null,
     val gate: String? = null,
     val seat: String? = null,
