@@ -2,7 +2,7 @@ package com.ciupa.routeapp.routelist
 
 import android.content.Context
 import android.util.AttributeSet
-import com.ciupa.routeapp.model.TransportCard
+import com.ciupa.routeapp.model.TransportCardType
 
 class RouteRecyclerView
 @JvmOverloads
@@ -21,7 +21,7 @@ androidx.recyclerview.widget.RecyclerView(context, attrs, defStyle) {
         setAdapter(adapter)
     }
 
-    fun setItems(data: List<TransportCard>) {
+    fun setItems(data: List<TransportCardType.TransportCard>) {
         adapter.setItems(data)
     }
 }

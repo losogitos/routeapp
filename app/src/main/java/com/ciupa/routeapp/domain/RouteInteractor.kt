@@ -1,18 +1,18 @@
 package com.ciupa.routeapp.domain
 
 import com.ciupa.routeapp.data.CardsRepository
-import com.ciupa.routeapp.model.TransportCard
+import com.ciupa.routeapp.model.TransportCardType
 
 class RouteInteractor {
 
     // Injected in normal project
     private val cardsRepository = CardsRepository()
 
-    fun fetchCards() : List<TransportCard> {
+    fun fetchCards() : List<TransportCardType.TransportCard> {
         return cardsRepository.loadCardsStack()
     }
 
-    fun findRoute(cards: List<TransportCard>) : List<TransportCard> {
+    fun findRoute(cards: List<TransportCardType.TransportCard>) : List<TransportCardType.TransportCard> {
         val blocks = mutableSetOf<SortingBlock>()
         for (card in cards) {
             blocks.attachToBlocks(SortingBlock(mutableListOf(card)))
@@ -51,6 +51,6 @@ class RouteInteractor {
     }
 
     class SortingBlock (
-        val cards: MutableList<TransportCard>
+        val cards: MutableList<TransportCardType.TransportCard>
     )
 }

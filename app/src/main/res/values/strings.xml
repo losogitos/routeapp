@@ -5,4 +5,5 @@
 	<string name="sit_in">Sit in seat %s.</string>
 	<string name="no_seat">No seat assignment.</string>
 	<string name="gate_seat">Gate %s, seat %s.</string>
+	<string name="you_have_arrived">You have arrived at your final destination</string>
 </resources>

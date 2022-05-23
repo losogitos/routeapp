@@ -2,10 +2,15 @@ package com.ciupa.routeapp.extension
 
 import android.widget.TextView
 import com.ciupa.routeapp.R
-import com.ciupa.routeapp.model.TransportCard
+import com.ciupa.routeapp.model.TransportCardType
 import com.ciupa.routeapp.model.TransportType
 
-fun TextView.setRouteText(card: TransportCard) {
+fun TextView.setRouteText(card: TransportCardType) {
+    if (card is TransportCardType.EndTransportCard) {
+        setText(R.string.you_have_arrived)
+        return
+    }
+    if (card !is TransportCardType.TransportCard) return
     card.startDestiny
     val road = context.getString(R.string.take_trip, card.transport.transportType.transportName,
     card.transport.number ?: "", card.startDestiny.destinyName, card.endDestiny.destinyName)

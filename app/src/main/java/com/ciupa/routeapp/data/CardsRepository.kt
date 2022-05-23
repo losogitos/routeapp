@@ -2,12 +2,12 @@ package com.ciupa.routeapp.data
 
 import com.ciupa.routeapp.model.Destiny
 import com.ciupa.routeapp.model.Transport
-import com.ciupa.routeapp.model.TransportCard
+import com.ciupa.routeapp.model.TransportCardType
 import com.ciupa.routeapp.model.TransportType
 
 class CardsRepository {
-    fun loadCardsStack(): List<TransportCard> {
-        val card1 = TransportCard(
+    fun loadCardsStack(): List<TransportCardType.TransportCard> {
+        val card1 = TransportCardType.TransportCard(
             1,
             Destiny.MADRIT,
             Destiny.BARCELONA,
@@ -17,7 +17,7 @@ class CardsRepository {
                 seat = "45B"
             )
         )
-        val card2 = TransportCard(
+        val card2 = TransportCardType.TransportCard(
             2,
             Destiny.BARCELONA,
             Destiny.GIRONA,
@@ -25,7 +25,7 @@ class CardsRepository {
                 TransportType.AIRPORTBUS,
             )
         )
-        val card3 = TransportCard(
+        val card3 = TransportCardType.TransportCard(
             3,
             Destiny.GIRONA,
             Destiny.LONDON,
@@ -37,7 +37,7 @@ class CardsRepository {
                 "Baggage drop at ticket counter 344."
             )
         )
-        val card4 = TransportCard(
+        val card4 = TransportCardType.TransportCard(
             4,
             Destiny.LONDON,
             Destiny.NEWYORK,

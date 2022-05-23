@@ -5,15 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ciupa.routeapp.databinding.TextRowItemBinding
 import com.ciupa.routeapp.extension.setRouteText
-import com.ciupa.routeapp.model.TransportCard
+import com.ciupa.routeapp.model.TransportCardType
 
 class RouteAdapter :
     RecyclerView.Adapter<RouteAdapter.ViewHolder>() {
 
-    private val items: MutableList<TransportCard> = mutableListOf()
+    private val items: MutableList<TransportCardType.TransportCard> = mutableListOf()
 
     class ViewHolder(val binding: TextRowItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(entry: TransportCard) {
+        fun bind(entry: TransportCardType) {
             binding.routeDescription.setRouteText(entry)
             binding.executePendingBindings()
         }
@@ -26,12 +26,15 @@ class RouteAdapter :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.bind(items[position])
+        when {
+            position == itemCount - 1 -> viewHolder.bind(TransportCardType.EndTransportCard)
+            else -> viewHolder.bind(items[position])
+        }
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = items.size + 1
 
-    fun setItems(data: List<TransportCard>) {
+    fun setItems(data: List<TransportCardType.TransportCard>) {
         items.clear()
         items.addAll(data)
         notifyDataSetChanged()

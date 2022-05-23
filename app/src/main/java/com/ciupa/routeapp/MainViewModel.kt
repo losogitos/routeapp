@@ -5,13 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ciupa.routeapp.domain.RouteInteractor
-import com.ciupa.routeapp.model.TransportCard
+import com.ciupa.routeapp.model.TransportCardType
 
 class MainViewModel : ViewModel() {
 
-    private val _cardList = MutableLiveData<List<TransportCard>>(emptyList())
-    val cardList: LiveData<List<TransportCard>> = _cardList
-    private val cards : List<TransportCard>
+    private val _cardList = MutableLiveData<List<TransportCardType.TransportCard>>(emptyList())
+    val cardList: LiveData<List<TransportCardType.TransportCard>> = _cardList
+    private val cards : List<TransportCardType.TransportCard>
     // Injected in normal project
     private val routeInteractor = RouteInteractor()
 
