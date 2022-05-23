@@ -4,15 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ciupa.routeapp.databinding.TextRowItemBinding
+import com.ciupa.routeapp.model.TransportCard
 
 class RouteAdapter :
     RecyclerView.Adapter<RouteAdapter.ViewHolder>() {
 
-    private val items: MutableList<String> = mutableListOf()
+    private val items: MutableList<TransportCard> = mutableListOf()
 
     class ViewHolder(val binding: TextRowItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(entry: String) {
-            binding.routeDescription.text = entry
+        fun bind(entry: TransportCard) {
+            binding.routeDescription.text = entry.toString()
             binding.executePendingBindings()
         }
     }
@@ -29,7 +30,7 @@ class RouteAdapter :
 
     override fun getItemCount() = items.size
 
-    fun setItems(data: List<String>) {
+    fun setItems(data: List<TransportCard>) {
         items.clear()
         items.addAll(data)
         notifyDataSetChanged()

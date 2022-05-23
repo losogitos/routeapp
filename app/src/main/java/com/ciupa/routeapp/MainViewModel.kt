@@ -9,21 +9,20 @@ import com.ciupa.routeapp.model.TransportCard
 
 class MainViewModel : ViewModel() {
 
-    private val _cardList = MutableLiveData<List<String>>(emptyList())
-    val cardList: LiveData<List<String>> = _cardList
+    private val _cardList = MutableLiveData<List<TransportCard>>(emptyList())
+    val cardList: LiveData<List<TransportCard>> = _cardList
     private val cards : List<TransportCard>
     // Injected in normal project
     private val routeInteractor = RouteInteractor()
 
     init {
         cards = routeInteractor.fetchCards()
-        val cardStrings = cards.map { it.toString() }
-        _cardList.value = cardStrings
+        _cardList.value = cards
     }
 
     fun onSortClick() {
         val sortedCards = routeInteractor.findRoute(cards)
         Log.d("Result", "Sorted elements: $sortedCards")
-        _cardList.value = sortedCards.map { it.toString() }
+        _cardList.value = sortedCards
     }
 }
