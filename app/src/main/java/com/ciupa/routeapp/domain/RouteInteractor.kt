@@ -12,6 +12,11 @@ class RouteInteractor {
         return cardsRepository.loadCardsStack()
     }
 
+    /**
+     * Warning: input data must be in consistent format - all cards can be linked. Otherwise
+     * the algorithm will never end.
+     * @todo protect the algorithm against non linkable cards
+     */
     fun findRoute(cards: List<TransportCardType.TransportCard>) : List<TransportCardType.TransportCard> {
         val blocks = mutableSetOf<SortingBlock>()
         for (card in cards) {
@@ -31,7 +36,7 @@ class RouteInteractor {
 
     /**
      * Tries to find a block to which given new block matches.
-     * If thre is no block to which the new block matches, new block
+     * If there is no block to which the new block matches, new block
      * is created.
      */
     private fun MutableSet<SortingBlock>.attachToBlocks(newBlock: SortingBlock) {
